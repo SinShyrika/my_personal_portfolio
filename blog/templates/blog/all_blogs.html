@@ -1,0 +1,35 @@
+{% extends 'portfolio/base.html' %}
+{% block title %}Блог{% endblock %}
+{% block content %}
+<style>
+    .blogs {
+        text-align: left;
+        padding-top: 50px;
+        padding-left: 50px;
+        display: flex;
+        flex-direction: column;
+        
+    }
+    .blogs .footer {
+        text-align: center;
+        margin: 0 auto;
+        padding-top: 50px;
+    }
+    a {
+        color: blue
+    }
+    a:active{
+        color: red
+    }
+</style>
+<div class="blogs">
+    {% for blog in blogs %}
+    <a href="{% url 'blog:detail' blog.id %}"><h3>{{ blog.title }}</h3></a><br>
+    <h4>{{ blog.date|date:'D d M' }}</h4>
+    {% endfor%}<br>
+    <div class = "footer"> 
+        <h4><a href="{% url 'home' %}">Домой</a></h4>
+        {% endblock %}
+    </div>
+   
+</div>

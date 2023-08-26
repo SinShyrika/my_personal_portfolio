@@ -1,0 +1,40 @@
+{% extends 'portfolio/base.html' %}
+{% block title %}{{ blog.title }}{% endblock %}
+{% block content %}
+<style>
+    .content h1 {
+        text-align: center;
+        padding-bottom: 50px;
+    }
+    .content h3 { 
+        text-align: justify;
+        padding-left: 100px;
+        padding-right: 100px;
+
+    }
+    .content a { 
+        text-decoration: none;
+        color: blue;
+
+    }
+    .content a:active { 
+        color: red;
+
+    }
+    .content h5 {
+        padding-left: 100px;
+    }
+
+    #homebutton {
+        text-align: right;
+        padding-top: 50px;
+        padding-left: 800px;
+    }
+</style>
+<div class="content">
+    <h1><b>{{ blog.title }}</b></h1>
+    <p><h3>{{ blog.description|safe }}</h3></p>
+    <br><h5><b>{{ blog.date|date:'D d M' }}</b></h5>
+    <a id = "homebutton" href="{% url 'home' %}">Домой</a>
+    {% endblock %}
+</div>
