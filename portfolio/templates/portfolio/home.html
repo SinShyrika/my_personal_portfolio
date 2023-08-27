@@ -17,18 +17,20 @@
         padding-right: 100px;
         padding-bottom: 50px;
     }
-    
+
     #size-image {
         text-align: center;
         padding-bottom: 20px;
         max-width: 100%;
-      
+
     }
+
     h1 {
         padding-left: 50px;
-       
-        
+
+
     }
+
     .word {
         width: 500px;
         padding: 10px;
@@ -36,17 +38,16 @@
 
     p img {
         height: 600px;
-        
+
     }
-    
 </style>
-<p id = "size-image"><img src="{% static 'portfolio/img/me.jpg' %}" height=600px id="space"></p><br><br>
+<p id="size-image"><img src="{% static 'portfolio/img/me.jpg' %}" height=600px id="space"></p><br><br>
 <h1><b>Мои портфолио:</b></h1><br>
 <div class="portfoilio-main-content">
     {% for project in projects%}
     <div class="portfolio">
         <h3>{{ project.title }}</h3>
-        <p class = "word">{{ project.description }}</p>
+        <p class="word">{{ project.description }}</p>
         <a href="{{ project.url }}" target="_blank"> <img src="{{ project.image.url }} " height=300px class="image"></a>
     </div>
     {% endfor %}

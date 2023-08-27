@@ -10,28 +10,34 @@
         flex-direction: column;
 
     }
-    .blogs .footer  {
+
+    .blogs .footer {
         text-align: center;
         margin: 0 auto;
         padding-top: 50px;
-       
+
     }
+
     a {
         color: blue
     }
-    a:active{
+
+    a:active {
         color: red
     }
+
     #homebutton {
         text-decoration: none;
     }
 </style>
 <div class="blogs">
     {% for blog in blogs %}
-    <a href="{% url 'blog:detail' blog.id %}"><h3>{{ blog.title }}</h3></a><br>
+    <a href="{% url 'blog:detail' blog.id %}">
+        <h3>{{ blog.title }}</h3>
+    </a><br>
     <h4>{{ blog.date|date:'D d M' }}</h4>
     {% endfor%}<br>
-    <div class = "footer">
+    <div class="footer">
         <h4><a id="homebutton" href="{% url 'home' %}">Домой</a></h4>
         {% endblock %}
     </div>

@@ -130,4 +130,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 try:
     from .local_settings import *
 except ImportError:
-    print ("В данный момент мы находмся на онлайн версии сайта")
+    print("В данный момент мы находмся на онлайн версии сайта")
