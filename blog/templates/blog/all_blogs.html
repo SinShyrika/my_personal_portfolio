@@ -10,16 +10,20 @@
         flex-direction: column;
 
     }
-    .blogs .footer {
+    .blogs .footer  {
         text-align: center;
         margin: 0 auto;
         padding-top: 50px;
+       
     }
     a {
         color: blue
     }
     a:active{
         color: red
+    }
+    #homebutton {
+        text-decoration: none;
     }
 </style>
 <div class="blogs">
@@ -28,7 +32,7 @@
     <h4>{{ blog.date|date:'D d M' }}</h4>
     {% endfor%}<br>
     <div class = "footer">
-        <h4><a href="{% url 'home' %}">Домой</a></h4>
+        <h4><a id="homebutton" href="{% url 'home' %}">Домой</a></h4>
         {% endblock %}
     </div>
 
