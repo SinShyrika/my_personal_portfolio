@@ -8,7 +8,7 @@
         padding-left: 50px;
         display: flex;
         flex-direction: column;
-        
+
     }
     .blogs .footer {
         text-align: center;
@@ -27,9 +27,9 @@
     <a href="{% url 'blog:detail' blog.id %}"><h3>{{ blog.title }}</h3></a><br>
     <h4>{{ blog.date|date:'D d M' }}</h4>
     {% endfor%}<br>
-    <div class = "footer"> 
+    <div class = "footer">
         <h4><a href="{% url 'home' %}">Домой</a></h4>
         {% endblock %}
     </div>
-   
+
 </div>
